@@ -80,7 +80,6 @@ const NearEarthTemplate = ({ isLoading, data, isError, refetch }) => {
             vAxis: {
               title: "NEO Name",
             },
-            //chartArea: { width: "50%", alignItems: "center" },
           }}
         />
       </div>

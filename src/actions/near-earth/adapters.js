@@ -1,5 +1,3 @@
-import { fromPairs } from "lodash";
-
 class NearEarthAdapter {
   constructor(data) {
     this.data = data;
