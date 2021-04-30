@@ -65,9 +65,9 @@ class NearEarthAdapter {
     return this.orbitingBodys;
   };
 
-  getAdaptedData = (fitler) => {
-    if (fitler !== "") {
-      return this.filterData(fitler);
+  getAdaptedData = (filter) => {
+    if (filter && filter !== "") {
+      return this.filterData(filter);
     }
     return this.adaptedData;
   };
