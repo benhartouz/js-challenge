@@ -36,7 +36,6 @@ const NearEarthTemplate = ({ isLoading, data, isError, refetch }) => {
   }
 
   const dataFiltred = data.getAdaptedData(filter);
-  console.log("dataFiltred", dataFiltred);
 
   return (
     <>
