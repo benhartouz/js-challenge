@@ -6,7 +6,6 @@ import {
   Box,
   Heading,
   Spacer,
-  Container,
   Text,
 } from '@chakra-ui/react'
 
