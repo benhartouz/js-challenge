@@ -46,7 +46,7 @@ const NearEarthTemplate = ({ isLoading, data, isError, refetch }) => {
             placeholder="Select option"
             onChange={(e) => setFilter(e.target.value)}
           >
-            {data.getOrbitingBods().map((item) => (
+            {data.getOrbitingBodys().map((item) => (
               <option value={item}>{item}</option>
             ))}
           </Select>
