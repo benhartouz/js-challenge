@@ -61,7 +61,7 @@ class NearEarthAdapter {
     );
   };
 
-  getOrbitingBods = () => {
+  getOrbitingBodys = () => {
     return this.orbitingBodys;
   };
 
