@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const AxiosHanlder = (api) => {
+const AxiosHandler = (api) => {
   let handler = {};
   const { adapter, onError } = api;
   if (api.method === "get") {
@@ -24,4 +24,4 @@ const AxiosHanlder = (api) => {
     });
 };
 
-export default AxiosHanlder;
+export default AxiosHandler;

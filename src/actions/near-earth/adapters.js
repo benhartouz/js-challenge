@@ -1,5 +1,3 @@
-import { fromPairs } from "lodash";
-
 class NearEarthAdapter {
   constructor(data) {
     this.data = data;
@@ -63,13 +61,13 @@ class NearEarthAdapter {
     );
   };
 
-  getOrbitingBods = () => {
+  getOrbitingBodys = () => {
     return this.orbitingBodys;
   };
 
-  getAdaptedData = (fitler) => {
-    if (fitler !== "") {
-      return this.filterData(fitler);
+  getAdaptedData = (filter) => {
+    if (filter && filter !== "") {
+      return this.filterData(filter);
     }
     return this.adaptedData;
   };
