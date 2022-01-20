@@ -1,11 +1,11 @@
-import { URL } from "../../constants/config";
-import { NearEarthAdapter } from "../../actions/near-earth/adapters";
+import {URL} from '../../constants/config'
+import {NearEarthAdapter} from '../../actions/near-earth/adapters'
 const fetchNearEarth = () => {
   return {
     route: URL,
-    method: "get",
+    method: 'get',
     adapter: NearEarthAdapter,
-  };
-};
+  }
+}
 
-export { fetchNearEarth };
+export {fetchNearEarth}
