@@ -1,11 +1,22 @@
 import { useState } from "react";
-import { Spinner } from "@chakra-ui/react";
+import {
+  Spinner,
+  Select,
+  Flex,
+  Box,
+  Heading,
+  Spacer,
+  Container,
+  Text,
+} from "@chakra-ui/react";
 import { Chart } from "react-google-charts";
 
 import RenderFlexCenter from "../renderFlexCenter";
 import Error from "../../components/error";
 
 const NearEarthTemplate = ({ isLoading, data, isError, refetch }) => {
+  const [filter, setFilter] = useState("");
+
   if (isLoading) {
     return (
       <RenderFlexCenter>
@@ -24,6 +35,23 @@ const NearEarthTemplate = ({ isLoading, data, isError, refetch }) => {
 
   return (
     <>
+      <Flex>
+        <Box p="2">
+          <Heading size="md">Javascript Challenge</Heading>
+        </Box>
+        <Spacer />
+        <Flex flexDirection={"row"} alignItems={"center"}>
+          <Text margin={5}>Filter:</Text>
+          <Select
+            placeholder="Select option"
+            onChange={(e) => setFilter(e.target.value)}
+          >
+            {data.getOrbitingBodys().map((item) => (
+              <option value={item}>{item}</option>
+            ))}
+          </Select>
+        </Flex>
+      </Flex>
       <div style={{ alignItems: "center" }}>
         <Chart
           chartType="BarChart"
@@ -41,7 +69,7 @@ const NearEarthTemplate = ({ isLoading, data, isError, refetch }) => {
               "Min Estimated Diameter (km)",
               "Max Estimated Diameter",
             ],
-            ...data.getAdaptedData(),
+            ...data.getAdaptedData(filter),
           ]}
           options={{
             title: "Near-Earth-Objects travelling around the earth",
